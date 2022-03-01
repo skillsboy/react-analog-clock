@@ -21,14 +21,8 @@ code {
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color: #282c34;
+  background-color: #162c57;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -42,12 +36,55 @@ code {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
+.clock {
+  width: 350px;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("/public/clock.png");
+  background-size: cover;
+  border: 4px solid #091921;
+  border-radius: 50%;
+  box-shadow: 0px 0px 50px red;
+  position: relative;
+}
 
-  to {
-    transform: rotate(360deg);
-  }
+.clock::before {
+  content: '';
+  width: 15px;
+  height: 15px;
+  background: #777;
+  border-radius: 50%;
+  z-index: 100;
+}
+
+.hour {
+  position: absolute;
+  bottom: 175px;
+  height: 95px;
+  width: 10px;
+  background-color: #777777;
+  transform-origin: bottom center;
+  transform: rotate(0deg);
+}
+
+.min {
+  position: absolute;
+  bottom: 175px;
+  height: 120px;
+  width: 7px;
+  background-color: #777777;
+  transform-origin: bottom center;
+  transform: rotate(0deg);
+}
+
+.sec {
+  position: absolute;
+  bottom: 150px;
+  height: 167px;
+  width: 3px;
+  background-color: red;
+  transform-origin: center 142px;
+  transform: rotate(0deg);
 }
